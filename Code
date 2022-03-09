@@ -1,0 +1,146 @@
+//variables
+int introChoice, middleChoice1, middleChoice2, middleChoice3, RoadMap;
+int pastyear = randint(1, 1000);
+int presentyear = randint(1100, 2000);
+string_t Character1, Character2;
+//functions
+//Road map with Choices
+void roadmap(){
+    printf("Do you want see a road map showing all the choices' outcome? '1' for yes and '2' for no\n");
+    scanf("%i", &RoadMap);
+    while(RoadMap != 1 && RoadMap != 2){
+        printf("That's not a choice. Please choose '1' or '2'\n");
+        scanf("%i", &RoadMap);   
+    }
+    if(RoadMap == 1) {
+    printf("Left door = water fills the hallway, continuing and turning back = death, down the hole = living but gain nothing.\n Middle door = sleeping dragon with treasure, fight = character 2 dies with character 1 gaining infinite wealth, sneaking and leaving = death.\n Right door = an army of skeletons, fight and distract and run = living and gaining valuable knowledge, sneaking = death.\n");
+    }
+    else if(RoadMap == 2) {
+        printf("Okay\n");
+    }
+}
+//intro
+void intro(string_t character1, string_t character2){
+    printf("The characters are %s and %s\n", character1, character2);
+    printf(Character1," and ",Character2," entered the Catacombs. They reached a crossroad with 3 doors with skeletons littered all over the place. The door on the left has water dripping down the entrance and voices of agony screams from the doorway. They don’t know whether if it was recent or a long time ago. The middle doorway has a sulfuric smell to it and a unknown noise. Down the right doorway, They hear scuffling noise as if something is coming down the doorway. You have to choose between the three doors.\n");
+    printf("'1' for the left door, '2' for the middle door, '3' for the right door.\n");
+    scanf("%i", &introChoice);
+    while(introChoice != 1 && introChoice != 2 && introChoice != 3){
+        printf("That is not a choice. Please choose '1', '2', or '3'\n");
+        scanf("%i", &introChoice);
+    }
+}
+//left door
+void middle1(){
+    printf(Character1, " and ", Character2," decided to go down the left doorway. As they and their friend run down the hallway, the roof opens up and the hallway starts filling up with water in a rapid rate.",Character1, " see a hole in the floor, but they can’t see how high the drop is or what’s even in the hole. They could either continue down the hallway and hope there’s a end to the hallway, go down the hole, or turn back and go back to the crosspath. They must quickly make a decision before you die.\n");
+    printf("'1' to continue, '2' for the hole, '3' to turn back\n");
+    scanf("%i", &middleChoice1);
+    while(middleChoice1 != 1 && middleChoice1 != 2 && middleChoice1 != 3){
+        printf("That is not a choice. Please choose '1', '2', or '3'\n");
+        scanf("%i", &middleChoice1);
+    }
+    
+}
+//middle door
+void middle2(){
+    printf("After consulting with ", Character2 ," and ", Character1 ," both decided to walk down the middle hallway. The smell was agonizing to the nose. The tunnel was twisting around and ", Character1 ," reached the end of the hallway.", Character1 ," realized the sulfuric smell was actually a dragon’s\n breath and the noise was it snoring as it sleeps.\n The room was only big enough to fit the dragon and behind it was mountains of gold and treasure.",Character1," wonder what should they do. Should they sneak and get the treasure as the dragon sleeps, fight it, or leave it and the Catacombs empty-handed.\n");
+    printf("'1' to fight, '2' to sneak, '3' to leave\n");
+    scanf("%i", &middleChoice2);
+    while(middleChoice2 != 1 && middleChoice2 != 2 && middleChoice2 != 3){
+        printf("That is not a choice. Please choose '1', '2', or '3'\n");
+        scanf("%i", &middleChoice2);
+    }
+}
+//right door
+void middle3(){
+    printf(Character1, " and ", Character2, " down the right hallway. As", Character1, " and ",Character2, " entered the hallway, the door immediately shuts and locked itself. They both kept going down the hallway to find several dozen reanimated skeletons with armor, swords, bows, and shields standing there waiting. The only 3 choices they have are to fight, try to sneak around, or distract then make a run for it.\n");
+    printf("'1' to fight, '2' to sneak, '3' to distract and run\n");
+    scanf("%i", &middleChoice3);
+    while(middleChoice3 != 1 && middleChoice3 != 2 && middleChoice3 != 3){
+        printf("That is not a choice. Please choose '1', '2', or '3'\n");
+        scanf("%i", &middleChoice3);
+    }
+}
+//middle1 endings
+void end1(){
+    printf(Character1, " and ", Character2, " decided to quickly run the hallway and hope for an exit. Their gear weighed you down as they both ran.", Character2 , " trips and ", Character2, " turn around to help him up. They both ran for what feels like an eternity as water keeps rising and you find that the hallway is a dead end. They both accept their death as the water went above your head.\n");
+    exit (1);
+}
+void end2(){
+    printf(Character1, " grabbed ", Character2, "’s hand and jump down the hole. As they both fall,", Character2 , " wonder if this pit has an end. Their feet hits the ground and they both realized the drop isn’t that big.", Character2 , " check the surroundings and see a chest glowing in a red light. They both walk towards it and open it. He find a scroll in the chest. Opening the scroll, you read what it has to offer. They both realize this was a map of the Catacombs and there was an exit in the room that they were in. ", Character1 , " found the secret lever to open the door and they both sweared exits the Catacombs,\n swearing to never enter ever again."); 
+    exit(1);
+}
+void end3(){
+    printf("They bolted around and darted towards the entrance of the hallway.", Character2, "realized that the entire hallway was a trap. The entrance was being sealed by a large boulder. ", Character1 ," looked around hopelessly as he try to find a way out. When they couldn't find one, they accepts their own defeat.\n");
+    exit(1);
+}
+//middle2 endings
+void end4(){
+    printf("Sleath was not their strongest suit and ", Character2 , " tells ", Character1, " that we should kill the dragon.", Character1 , " pull out his claymore and sneak behind the dragon. He climbed onto the dragon’s neck without waking it up, you give a countdown to ", Character2, " who was aiming at the dragon with a longbow.", Character1, " stabs the dragon in the neck and their friend shot arrows at the dragon’s eyes, blinding the dragon. The dragon roared in pain and breathing fire all over the place. He continue to stabbing the dragon and he falls. He grined and look at his friend who is lying on the floor with burns all over his body. He ran down the dragon’s corpse and check on his friend.",Character1," realizes that there’s nothing that he could do to save his own friend and he closes his eyes for the final time in", Character1, "'s" " arms.",Character1," gained unlimited wealth from the dragon’s treasury,\n but what did it cost in the end?\n");
+    exit(1);
+}
+void end5(){
+    printf(Character1, " decided to try to steal the treasure from the dragon. As he and ",Character2, " crept in front of the dragon trying to not make a noise, ", Character1, "'s hits a rock and you tripped and fell. The dragon awakes from its slumber and glares at you and your friend. He stared at the dragon as it opens its mouth and fire came sweeping out. The fire consumes both of them as screams in agony echo through the hallway");
+    exit(1);
+}
+void end6(){
+    printf(Character1, " and ", Character2, " made the decision to not bother the dragon as killing it will be impossible and sneaking about the dragon’s den is not a good idea. They both walk in defeat as they  walk back towards the door. He made it back to the door, but it find it to be locked. They both were trapped in the Catacombs with no way out. ", Character1," slumped down on a pillar and join the many skeletons littered all over the floor.");
+    exit(1);
+}
+//middle3 endings
+void end7(){
+    printf(Character1, " pulled his sword from their sheath and pull out your shield.",Character2, " pulls out a bow and fire at the first skeleton. As soon as the arrow hit the skeleton, they all turned towards you both and charged towards ", Character1,". As ", Character2, " rain arrows at the skeleton, he charged in between the ranks slashing everything in the way. Eventually all the skeletons are nothing but bones and weapons. His friend appeared beside him both walk towards the light at the end of the hallway. When you exit, you entered a room with a skeleton holding a journal. You took the journal and flip through the pages. You realized this was a detailed eye witnessed event of the 8 Years War and what happened during it. The war took place in ", pastyear , ". The present year right now is ", presentyear , ". You close the book and put it in your backpack. In the room, there was a door and you opened it to find that it exits into the mountain close to the village. As you and your friends exit, the door disappears and you both walk back to the village with the new knowledge you have found.");
+    exit(1);
+}
+void end8(){
+    printf(Character1," crouch and sneak around the skeletons.", Character2, " follows suit. As you crept around the skeletons, he made a slight noise. They turned towards both of them and charged. ",Character2, " didn’t have time to react as they pounce on him. ",Character1, " and ", Character2, " joined the ranks of the skeletons waiting for the next foolish adventurers to come into this death trap.");
+    exit(1);
+}
+void end9(){
+    printf(Character1," picked up a rock and threw it to far away from him. They turned towards the noise and started it towards it.", Character1 , " and ", Character2 , " sneak a wide circle away from the skeletons and go to the end of the hallway.  When they exit, they entered a room with a skeleton holding a journal.", Character1," took the journal and flip through the pages. He realizes this was a detailed eye witnessed event of the 8 Years War and what happened during it. The war took place in ", pastyear , ". The present year right now is ", presentyear , ". He close the book and put it in your backpack. In the room, there was a door and he opened it to find that it exits into the mountain close to the village. As ", Character1 , " and ",   Character2, " exit, the door disappears and you both walk back to the village with the new knowledge he have found.");
+    exit(1);
+}
+int main(){  //main program to run (logic)
+    printf("What is the character's name?\n");
+    scanf("%s", &Character1);
+    printf("What is the friend's name?\n");
+    scanf("%s", &Character2);
+    roadmap();
+    intro(Character1, Character2);
+    if(1 == introChoice){
+        middle1();
+        if(middleChoice1 == 1){
+            end1();
+        }
+        if(middleChoice1 == 2){
+            end2();
+        }
+        if(middleChoice1 == 3){
+            end3();
+        }
+    }
+    if(2 == introChoice){
+        middle2();
+        if(middleChoice2 == 1){
+            end4();
+        }
+        if(middleChoice2 == 2){
+            end5();
+        }
+        if(middleChoice2 == 3){
+            end6();
+        }
+    }
+    if(3 == introChoice);{
+        middle3();
+        if(middleChoice3 == 1){
+            end7();
+        }
+        if(middleChoice3 == 2){
+            end8();
+        }
+        if(middleChoice3 == 3){
+            end9();
+        }
+    }
+}
